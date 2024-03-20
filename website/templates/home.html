@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+    <h1>Notes</h1>
+    <form method="POST">
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" id="title" name="title" required>
+        </div>
+        <div class="form-group">
+            <label for="content">Content:</label>
+            <textarea class="form-control" id="content" name="content" required></textarea>
+        </div>
+        <br />
+        <button type="submit" class="btn btn-success">Add Note</button>
+    </form>
+    
+    <hr>
+    
+    <ul class="list-group list-group-flush" id="notes">
+        {% for note in user.notes %}
+            <li class="list-group-item">
+                <h5>
+                    {{ note.title }}
+                    <button type="button" class="btn-close" onclick="deleteNote({{ note.id }})">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </h5>
+                <p>{{ note.content }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

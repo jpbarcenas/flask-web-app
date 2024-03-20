@@ -1,0 +1,27 @@
+1. Create the Project Folder Structure
+    * project root
+    * website (package)
+        - static
+        - templates
+2. Add generic Python script files.
+    * project root
+        - main.py
+    *  website (package)
+        - __init__.py
+        - auth.py
+        - models.py
+        - views.py
+3. Install Flask library
+    `pip install flask`
+4. Install Flas Login library
+    `pip install flas-login`
+5. Install Flask SQL Alchemy library
+    `pip install flask-sqlalchemy`
+
+6. Specify the Port to use to run the app
+    * Check if the port `5001` is is use
+    `netstat -ano | findstr :5001`
+
+7. Define the Base Routes
+8. Define the Routes Blueprint
+9. Setup the Base Html Layout (template)
